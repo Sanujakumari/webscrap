@@ -11,17 +11,17 @@ app.get("/", (request, response) => {
        });
 
 
-// var obj;
+var obj;
 
-// fetch('https://api.rainforestapi.com/request?api_key=5D562933667A44829A1ABF28B850EADD&type=product&amazon_domain=amazon.in&asin=B097RD2JX8')
-//   .then(res => res.json())
-//   .then(data => obj = data)
-//   .then(() => console.log(obj))
+fetch('https://api.rainforestapi.com/request?api_key=5D562933667A44829A1ABF28B850EADD&type=search&amazon_domain=amazon.in&search_term=mobiles&sort_by=price_high_to_low')
+  .then(res => res.json())
+  .then(data => obj = data)
+  .then(() => console.log(obj))
 
-// app.get("/amazon_product",(request,response)=>{
-//              response.send(obj);
-//      }
-//     )
+app.get("/amazon_product",(request,response)=>{
+             response.send(obj);
+     }
+    )
 //     app.post(async(request,response)=>{
 //         const data=request.body;
 //         const result=await database(data);
