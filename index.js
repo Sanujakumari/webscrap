@@ -6,19 +6,22 @@ dotenv.config();
 console.log(process.env);
 const app = express();
 
+app.get("/", (request, response) => {
+         response.send("Hello world  🌎");
+       });
 
 
-var obj;
+// var obj;
 
-fetch('https://api.rainforestapi.com/request?api_key=5D562933667A44829A1ABF28B850EADD&type=product&amazon_domain=amazon.in&asin=B097RD2JX8')
-  .then(res => res.json())
-  .then(data => obj = data)
-  .then(() => console.log(obj))
+// fetch('https://api.rainforestapi.com/request?api_key=5D562933667A44829A1ABF28B850EADD&type=product&amazon_domain=amazon.in&asin=B097RD2JX8')
+//   .then(res => res.json())
+//   .then(data => obj = data)
+//   .then(() => console.log(obj))
 
-app.get("/amazon_product",(request,response)=>{
-             response.send(obj);
-     }
-    )
+// app.get("/amazon_product",(request,response)=>{
+//              response.send(obj);
+//      }
+//     )
 //     app.post(async(request,response)=>{
 //         const data=request.body;
 //         const result=await database(data);
@@ -69,7 +72,5 @@ async function createConnection(){
 // // response.send(amazon_product.filter((product)=>product.Deal_Price===Deal_Price));
 // }
 // )
-// app.get("/", (request, response) => {
-//     response.send("Hello world  🌎");
-//   });
+//
    app.listen(PORT, () => console.log("The server is started in ", PORT));
