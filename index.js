@@ -2,7 +2,6 @@ import express from "express";
 import {MongoClient} from "mongodb"
 import dotenv from "dotenv" ;
 import fetch from 'node-fetch';
-import { createBrotliDecompress } from "zlib";
 dotenv.config();
 console.log(process.env);
 const app = express();
