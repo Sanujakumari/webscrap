@@ -25,8 +25,7 @@ app.get("/amazon_product",(request,response)=>{
 
 const PORT =  9000;
 //const MONGO_URL="mongodb://localhost"
-// const MONGO_URL=process.env.MONGO_URL;
-const MONGO_URL="mongodb+srv://sanuja-webscrap:webscrap@cluster0.rnvrh.mongodb.net";
+const MONGO_URL=process.env.MONGO_URL;
 async function createConnection(){
     const client= new MongoClient(MONGO_URL);
     await client.connect();
