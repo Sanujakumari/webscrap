@@ -2,14 +2,12 @@ import express from "express";
 import {MongoClient} from "mongodb"
 import dotenv from "dotenv" ;
 import fetch from 'node-fetch';
+import { createBrotliDecompress } from "zlib";
 dotenv.config();
 console.log(process.env);
 const app = express();
 
-// const response=await fetch('https://api.rainforestapi.com/request?api_key=5D562933667A44829A1ABF28B850EADD&type=product&amazon_domain=amazon.in&asin=B097RD2JX8')
-// const r1=await response.clone();
-// const results=await Promise.all([response.json(),r1.json()])
-// console.log(results[0]);
+
 
 var obj;
 
@@ -22,6 +20,21 @@ app.get("/amazon_product",(request,response)=>{
              response.send(obj);
      }
     )
+//     app.post(async(request,response)=>{
+//         const data=request.body;
+//         const result=await database(data);
+
+//         response.send(result);
+// }
+// )
+// async function database(data){
+//     console.log(data);
+//   const result = await client
+//     .db("webscraap")
+//     .collection("product")
+//     .insertMany(data);
+//   return result;
+// }
 
 const PORT =  9000;
 //const MONGO_URL="mongodb://localhost"
