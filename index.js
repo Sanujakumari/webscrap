@@ -38,7 +38,7 @@ app.get("/amazon_product",(request,response)=>{
 //   return result;
 // }
 
-const PORT =  9000;
+const PORT = process.env.PORT || 9000;
 //const MONGO_URL="mongodb://localhost"
 const MONGO_URL=process.env.MONGO_URL;
 async function createConnection(){
