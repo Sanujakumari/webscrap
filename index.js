@@ -2,11 +2,15 @@ import express from "express";
 import {MongoClient} from "mongodb"
 import dotenv from "dotenv" ;
 import fetch from 'node-fetch';
+import cors from "cors";
+
 dotenv.config();
 console.log(process.env);
 const app = express();
+app.use(express.json());
+app.use(cors());
 
-app.get("/", (request, response) => {
+app.get("/welcome", (request, response) => {
          response.send("Hello world  🌎");
        });
 
@@ -18,10 +22,11 @@ fetch('https://api.rainforestapi.com/request?api_key=5D562933667A44829A1ABF28B85
   .then(data => obj = data)
   .then(() => console.log(obj))
 
-app.get("/amazon_product",(request,response)=>{
+app.get("/",(request,response)=>{
              response.send(obj);
      }
     )
+   
 //     app.post(async(request,response)=>{
 //         const data=request.body;
 //         const result=await database(data);
