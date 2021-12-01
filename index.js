@@ -8,7 +8,6 @@ dotenv.config();
 console.log(process.env);
 const app = express();
 app.use(express.json());
-app.use(cors());
 
 app.get("/welcome", (request, response) => {
          response.send("Hello world  🌎");
